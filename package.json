@@ -1,0 +1,22 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "Project for job application Wisemen.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Urny97/Pokedex.git"
+  },
+  "author": "Arne Backx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Urny97/Pokedex/issues"
+  },
+  "homepage": "https://github.com/Urny97/Pokedex#readme",
+  "dependencies": {
+    "axios": "^1.1.3"
+  }
+}
