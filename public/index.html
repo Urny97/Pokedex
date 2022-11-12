@@ -15,7 +15,7 @@
     />
     <title>Pokedex</title>
   </head>
-  <body>
+  <body class="bg-stone-100">
     <!-- Main container -->
     <div class="m-3">
       <!-- Icons -->
@@ -25,7 +25,7 @@
       </div>
       <h1 class="font-semibold text-3xl mt-5">Pok&eacute;dex</h1>
       <!-- Searchbar -->
-      <div class="flex items-center bg-stone-200 border rounded-lg mt-2 mb-4">
+      <div class="flex items-center bg-stone-200 border rounded-lg mt-2">
         <i class="fa-solid fa-magnifying-glass mx-1"></i
         ><input
           type="text"
@@ -34,20 +34,35 @@
         />
       </div>
       <!-- Mijn team en favorieten -->
-      <div class="flex space-x-2">
+      <div class="flex space-x-2 my-5">
         <!-- Mijn team -->
         <div
-          class="flex-auto bg-[#5641B1] text-white rounded-lg pt-8 px-3 pb-3"
+          class="flex-auto bg-[#5641B1] drop-shadow text-white rounded-lg pt-8 px-3 pb-3"
         >
           <h2 class="text-lg">Mijn team</h2>
           <h3 class="text-sm opacity-60 font-light">4 pokemons</h3>
         </div>
         <!-- Favorieten -->
         <div
-          class="flex-auto bg-[#43CCB7] text-white rounded-lg pt-8 px-3 pb-3"
+          class="flex-auto bg-[#43CCB7] drop-shadow text-white rounded-lg pt-8 px-3 pb-3"
         >
           <h2 class="text-lg">Favorieten</h2>
           <h3 class="text-sm opacity-60 font-light">12 pokemons</h3>
+        </div>
+      </div>
+      <!-- Pokemon -->
+      <div class="flex items-center bg-white rounded-lg drop-shadow">
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+          alt=""
+        />
+        <div class="flex flex-col">
+          <h2 class="">Bulbasaur</h2>
+          <h3 class="">Nr.001</h3>
+        </div>
+        <div>
+          <span>Poison</span>
+          <span>Grass</span>
         </div>
       </div>
     </div>
