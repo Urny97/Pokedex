@@ -5,9 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="../node_modules/@fortawesome/fontawesome-free/css/fontawesome.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../node_modules/@fortawesome/fontawesome-free/css/solid.css"
+      rel="stylesheet"
+    />
     <title>Pokedex</title>
   </head>
   <body>
-    <h1>Pok&eacute;dex</h1>
+    <!-- Main container -->
+    <div class="m-3">
+      <!-- Icons -->
+      <div class="text-right">
+        <i class="fa-solid fa-filter fa-xl m-3"></i
+        ><i class="fa-solid fa-sort fa-xl m-2"></i>
+      </div>
+      <h1 class="font-semibold text-3xl mt-5">Pok&eacute;dex</h1>
+      <!-- Searchbar -->
+      <div class="flex items-center bg-stone-200 border rounded-lg mt-2 mb-4">
+        <i class="fa-solid fa-magnifying-glass mx-1"></i
+        ><input
+          type="text"
+          placeholder="Pokemon zoeken"
+          class="w-full border bg-stone-200 rounded-lg"
+        />
+      </div>
+      <!-- Mijn team en favorieten -->
+      <div class="flex space-x-2">
+        <!-- Mijn team -->
+        <div
+          class="flex-auto bg-[#5641B1] text-white rounded-lg pt-8 px-3 pb-3"
+        >
+          <h2 class="text-lg">Mijn team</h2>
+          <h3 class="text-sm opacity-60 font-light">4 pokemons</h3>
+        </div>
+        <!-- Favorieten -->
+        <div
+          class="flex-auto bg-[#43CCB7] text-white rounded-lg pt-8 px-3 pb-3"
+        >
+          <h2 class="text-lg">Favorieten</h2>
+          <h3 class="text-sm opacity-60 font-light">12 pokemons</h3>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
