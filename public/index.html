@@ -14,7 +14,8 @@
       rel="stylesheet"
     />
     <script src="https://unpkg.com/vue@next" defer></script>
-    <script src="app.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../src/app.js" defer></script>
     <title>Pokedex</title>
   </head>
   <body class="bg-stone-100">
@@ -32,28 +33,31 @@
         ><input
           type="text"
           placeholder="Pokemon zoeken"
-          class="w-full border bg-stone-200 rounded-lg"
+          class="w-full border bg-stone-200 rounded-lg focus:outline-none"
         />
       </div>
       <!-- Mijn team en favorieten -->
-      <div class="flex space-x-2 my-5">
+      <div class="flex space-x-2 my-5 sm:flex-col">
         <!-- Mijn team -->
         <div
-          class="flex-auto bg-[#5641B1] drop-shadow text-white rounded-lg pt-8 px-3 pb-3"
+          class="flex-auto bg-[#5440ad] drop-shadow text-white rounded-lg pt-8 px-3 pb-3 hover:bg-[#3e3081] hover:-translate-y-1 hover:drop-shadow-lg cursor-pointer duration-300"
         >
           <h2 class="text-lg">Mijn team</h2>
           <h3 class="text-sm opacity-60 font-light">4 pokemons</h3>
         </div>
         <!-- Favorieten -->
         <div
-          class="flex-auto bg-[#43CCB7] drop-shadow text-white rounded-lg pt-8 px-3 pb-3"
+          class="flex-auto bg-[#43CCB7] drop-shadow text-white rounded-lg pt-8 px-3 pb-3 hover:bg-[#2b9f8e] hover:-translate-y-1 hover:drop-shadow-lg cursor-pointer duration-300"
         >
           <h2 class="text-lg">Favorieten</h2>
           <h3 class="text-sm opacity-60 font-light">12 pokemons</h3>
         </div>
       </div>
       <!-- Pokemon -->
-      <div class="flex bg-white rounded-lg drop-shadow px-4 py-2">
+      <div
+        id="pokemon"
+        class="flex bg-white rounded-lg drop-shadow px-4 py-2 hover:drop-shadow-xl hover:translate-x-1 cursor-pointer duration-300"
+      >
         <img
           class="borde aspect-square w-16"
           src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
@@ -64,9 +68,15 @@
           <h3 class="text-sm opacity-70">Nr. 001</h3>
         </div>
         <div class="flex-auto text-right">
-          <span class="">Poison</span>
-          <span>Grass</span>
-          <i class="fa-solid fa-angle-right"></i>
+          <span
+            class="text-white text-sm px-2 py-0 mx-1 bg-[#BA7EC8] border border-[#BA7EC8] rounded-full"
+            >Poison</span
+          >
+          <span
+            class="text-white text-sm px-2 py-0 mx-1 bg-[#95C24D] border border-[#95C24D] rounded-full"
+            >Grass</span
+          >
+          <i class="fa-solid fa-angle-right opacity-40 ml-4"></i>
         </div>
       </div>
     </div>
