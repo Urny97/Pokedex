@@ -2,12 +2,28 @@ const app = Vue.createApp({
   data() {
     return {
       pokemonArray: [],
+      pokeName: "Charmander",
     };
   },
   computed: {
-    imageSource(index) {
-      let noProxyArray = JSON.parse(JSON.stringify(this.pokemonArray));
-      return noProxyArray[index]["sprites"]["front_default"];
+    pokeNum(id) {
+      console.log(id);
+      const parsedId = parseInt(id);
+      if (1 <= parsedId < 10) {
+        return "00" + id;
+      } else if (10 <= parsedId < 100) {
+        return "0" + id;
+      } else {
+        return id;
+      }
+    },
+    bgAndBorderColor(typeSlot) {
+      console.log(typeSlot);
+      const colorname = typeSlot.type.name;
+      return `bg-${colorname} border border-${colorname}`;
+    },
+    capitalize(string) {
+      return string[0].toUpperCase() + string.slice(1, string.length);
     },
   },
   methods: {},
@@ -32,9 +48,6 @@ const app = Vue.createApp({
             });
         }
         this.pokemonArray = initialArray;
-        console.log(this.pokemonArray);
-        let noProxyArray = JSON.parse(JSON.stringify(this.pokemonArray));
-        console.log(noProxyArray);
       })
       .catch((error) => {
         console.log(error);
@@ -42,4 +55,4 @@ const app = Vue.createApp({
   },
 });
 
-app.mount("#pokemon");
+app.mount("#vapp");

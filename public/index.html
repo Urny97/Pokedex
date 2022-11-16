@@ -13,20 +13,20 @@
       href="../node_modules/@fortawesome/fontawesome-free/css/solid.css"
       rel="stylesheet"
     />
-    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="../src/app.js" defer></script>
     <title>Pokedex</title>
   </head>
   <body class="bg-stone-100">
     <!-- Main container -->
-    <div class="m-3">
-      <!-- Icons -->
+    <div id="vapp" class="m-3">
+      <!-- Filter and sort -->
       <div class="text-right">
-        <i class="fa-solid fa-filter fa-xl m-3"></i
-        ><i class="fa-solid fa-sort fa-xl m-2"></i>
+        <i class="fa-solid fa-filter fa-xl m-3 cursor-pointer"></i
+        ><i class="fa-solid fa-sort fa-xl m-2 cursor-pointer"></i>
       </div>
-      <h1 class="font-semibold text-3xl mt-5">Pok&eacute;dex</h1>
+      <h1 class="font-semibold text-3xl mt-5 cursor-default">Pok&eacute;dex</h1>
       <!-- Searchbar -->
       <div class="flex items-center bg-stone-200 border rounded-lg mt-2">
         <i class="fa-solid fa-magnifying-glass mx-1"></i
@@ -53,28 +53,28 @@
           <h3 class="text-sm opacity-60 font-light">12 pokemons</h3>
         </div>
       </div>
-      <!-- Pokemon -->
+      <!-- Pokemon List -->
       <div
+        v-for="pokemon in pokemonArray"
         id="pokemon"
-        class="flex bg-white rounded-lg drop-shadow px-4 py-2 hover:drop-shadow-xl hover:translate-x-1 cursor-pointer duration-300"
+        class="flex bg-white rounded-lg drop-shadow my-2 px-4 py-2 hover:drop-shadow-xl hover:translate-x-1 cursor-pointer duration-300"
       >
         <img
-          class="borde aspect-square w-16"
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+          class="aspect-square w-16"
+          :src="pokemon.sprites.front_default"
           alt=""
         />
         <div class="flex flex-col self-center ml-6">
-          <h2 class="font-medium">Bulbasaur</h2>
-          <h3 class="text-sm opacity-70">Nr. 001</h3>
+          <h2 class="font-medium capitalize">{{ pokemon.name }}</h2>
+          <h3 class="text-sm opacity-70">Nr. {{ pokemon.id }}</h3>
         </div>
         <div class="flex-auto text-right">
+          <!-- :class="bgAndBorderColor(typeSlot)" -->
+          <!-- capitalize(typeSlot.type.name) -->
           <span
-            class="text-white text-sm px-2 py-0 mx-1 bg-[#BA7EC8] border border-[#BA7EC8] rounded-full"
-            >Poison</span
-          >
-          <span
-            class="text-white text-sm px-2 py-0 mx-1 bg-[#95C24D] border border-[#95C24D] rounded-full"
-            >Grass</span
+            v-for="typeSlot in pokemon.types"
+            class="text-white text-sm bg-gray-400 border border-gray-400 px-2 pb-1 mx-1 rounded-full"
+            >{{ typeSlot.type.name }}</span
           >
           <i class="fa-solid fa-angle-right opacity-40 ml-4"></i>
         </div>
